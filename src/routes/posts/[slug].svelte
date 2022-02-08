@@ -12,15 +12,10 @@
 </script>
 
 <script lang="ts">
-  const {
-    data: {
-      post: { title, excerpt },
-    },
-  } = $GetPostQueryStore
+  let title = $GetPostQueryStore.data?.post?.title
+  let excerpt = $GetPostQueryStore.data?.post?.excerpt
 </script>
 
 <h1>{title}</h1>
 
 <p>{excerpt}</p>
-
-<pre>{JSON.stringify($GetPostQueryStore, null, 2)}</pre>

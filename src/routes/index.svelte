@@ -11,14 +11,10 @@
 </script>
 
 <script lang="ts">
-  const {
-    data: { posts },
-  } = $AllPostsQueryStore
+  let posts = $AllPostsQueryStore.data?.posts
 </script>
 
 <h1>Welcome to KitQL</h1>
-
-<pre>{JSON.stringify(posts, null, 2)}</pre>
 
 {#each posts as { title, excerpt, slug }}
   <a href={`/posts/${slug}`}>
