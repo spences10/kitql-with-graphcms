@@ -1,0 +1,7 @@
+query AllPosts {
+  posts {
+    title
+    excerpt
+    slug
+  }
+}
