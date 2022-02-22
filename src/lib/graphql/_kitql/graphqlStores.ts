@@ -5,7 +5,21 @@ import { writable } from 'svelte/store';
 import { kitQLClient } from '../kitQLClient';
  
 /**
- * Svetle Store with the latest `AllPostsQuery` Operation
+ * KitQL Reset Cache for `AllPostsQuery` Operation
+ */
+export function AllPostsQueryCacheReset(
+	variables: Types.AllPostsQueryVariables | null = null,
+	allOperationKey: boolean = true,
+	withResetStore: boolean = true
+) {
+	kitQLClient.cacheRemove('AllPostsQuery', { variables, allOperationKey });
+	if (withResetStore) {
+		AllPostsQueryStore.set(defaultStoreValue);
+	}
+}
+
+/**
+ * KitQL Svelte Store with the latest `AllPostsQuery` Operation
  */
 export const AllPostsQueryStore = writable<RequestResult<Types.AllPostsQuery, Types.AllPostsQueryVariables>>(defaultStoreValue);
 
@@ -25,8 +39,8 @@ export async function AllPostsQuery(
 		storedVariables = c.variables;
 		return { ...c, status: RequestStatus.LOADING };
 	});
-	let { fetch, variables, settings } = params || {};
-  let { cache } = settings || {};
+	let { fetch, variables, settings } = params ?? {};
+  let { cache } = settings ?? {};
 
   if (variables === undefined) {
     variables = storedVariables;
@@ -45,7 +59,21 @@ export async function AllPostsQuery(
 }
 
 /**
- * Svetle Store with the latest `GetPostQuery` Operation
+ * KitQL Reset Cache for `GetPostQuery` Operation
+ */
+export function GetPostQueryCacheReset(
+	variables: Types.GetPostQueryVariables | null = null,
+	allOperationKey: boolean = true,
+	withResetStore: boolean = true
+) {
+	kitQLClient.cacheRemove('GetPostQuery', { variables, allOperationKey });
+	if (withResetStore) {
+		GetPostQueryStore.set(defaultStoreValue);
+	}
+}
+
+/**
+ * KitQL Svelte Store with the latest `GetPostQuery` Operation
  */
 export const GetPostQueryStore = writable<RequestResult<Types.GetPostQuery, Types.GetPostQueryVariables>>(defaultStoreValue);
 
@@ -65,8 +93,8 @@ export async function GetPostQuery(
 		storedVariables = c.variables;
 		return { ...c, status: RequestStatus.LOADING };
 	});
-	let { fetch, variables, settings } = params || {};
-  let { cache } = settings || {};
+	let { fetch, variables, settings } = params ?? {};
+  let { cache } = settings ?? {};
 
   if (variables === undefined) {
     variables = storedVariables;
