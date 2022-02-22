@@ -924,7 +924,7 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@kitql/all-in@^0.1.5":
+"@kitql/all-in@0.1.5":
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/@kitql/all-in/-/all-in-0.1.5.tgz#f80ddb33f7802366c6314a696ac35a118f749a3c"
   integrity sha512-n37cvIXNlOP7lMZcl5e1lXiaZZze7EEq909CY6nGvY/b6tJQU4coy7ettKn3w0rYcCpXR1r1PM98q46uWOXydA==
@@ -2601,7 +2601,7 @@ graphql-ws@^5.4.1:
   resolved "https://registry.yarnpkg.com/graphql-ws/-/graphql-ws-5.6.1.tgz#2444eaa222c60f8d937f3131eab86106fb3ab21d"
   integrity sha512-lXxGMjs4xUDLEFS4TB9kbQUamV24HorMoiv+U1dxHcis7xyrk7qztSCP+XvM9ZMStLwELqD+ROGDV1cqraFNPA==
 
-graphql@16.3.0, graphql@^16.3.0:
+graphql@16.3.0:
   version "16.3.0"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.3.0.tgz#a91e24d10babf9e60c706919bb182b53ccdffc05"
   integrity sha512-xm+ANmA16BzCT5pLjuXySbQVFwH3oJctUVdy81w1sV0vBU0KgDdBGtxQOUd5zqOBk/JayAFeG8Dlmeq74rjm/A==
