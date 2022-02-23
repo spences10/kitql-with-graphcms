@@ -21,6 +21,6 @@
 
 <h1 class="text-4xl font-semibold mb-5">{page.title}</h1>
 
-<article class="prose">
+<article class="prose-xl">
   {@html page.content.html}
 </article>

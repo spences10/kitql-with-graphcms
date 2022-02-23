@@ -20,17 +20,20 @@
       <img class="rounded-xl" src={coverImage.url} alt={title} />
     </figure>
     <div class="card-body">
-      <h2 class="title">{title}</h2>
-      <p>{excerpt}</p>
-      <div class="flex justify-center mt-5 space-x-2">
+      <h2 class="title text-3xl font-bold tracking-wide">{title}</h2>
+      <p class="text-xl">{excerpt}</p>
+      <div class="flex justify-center mt-5 space-x-2 mb-3">
         {#each tags as tag}
-          <span class="badge badge-primary">{tag}</span>
+          <span class="badge badge-primary text-lg py-3">{tag}</span>
         {/each}
       </div>
       <div class="justify-center card-actions">
-        <a href={`/posts/${slug}`} class="btn btn-outline btn-primary"
-          >Read &rArr;</a
+        <a
+          href={`/posts/${slug}`}
+          class="btn btn-outline btn-primary text-lg"
         >
+          Read &rArr;
+        </a>
       </div>
     </div>
   </section>
