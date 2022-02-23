@@ -16,9 +16,13 @@
 
 <h1>Welcome to KitQL</h1>
 
-{#each posts as { title, excerpt, slug }}
-  <a href={`/posts/${slug}`}>
-    <p>{title}</p>
-    <p>{excerpt}</p>
-  </a>
-{/each}
+<ul>
+  {#each posts as { title, excerpt, slug }}
+    <li>
+      <a href={`/posts/${slug}`}>
+        <p>{title}</p>
+      </a>
+      <p>{excerpt}</p>
+    </li>
+  {/each}
+</ul>
