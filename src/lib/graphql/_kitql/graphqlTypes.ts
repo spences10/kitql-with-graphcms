@@ -735,7 +735,6 @@ export type Author = Node & {
   createdBy?: Maybe<User>;
   /** Get the document in other stages */
   documentInStages: Array<Author>;
-  helloWorldUix?: Maybe<Scalars['String']>;
   /** List of Author versions */
   history: Array<Version>;
   /** The unique identifier */
@@ -744,6 +743,7 @@ export type Author = Node & {
   name: Scalars['String'];
   /** Add a profile picture for authors */
   picture?: Maybe<Asset>;
+  /** Connect blog posts to this author */
   posts: Array<Post>;
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']>;
@@ -837,7 +837,6 @@ export type AuthorConnection = {
 export type AuthorCreateInput = {
   biography?: InputMaybe<Scalars['String']>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
-  helloWorldUix?: InputMaybe<Scalars['String']>;
   name: Scalars['String'];
   picture?: InputMaybe<AssetCreateOneInlineInput>;
   posts?: InputMaybe<PostCreateManyInlineInput>;
@@ -913,25 +912,6 @@ export type AuthorManyWhereInput = {
   /** All values that are not contained in given list. */
   createdAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
   createdBy?: InputMaybe<UserWhereInput>;
-  helloWorldUix?: InputMaybe<Scalars['String']>;
-  /** All values containing the given string. */
-  helloWorldUix_contains?: InputMaybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  helloWorldUix_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  helloWorldUix_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values that are not equal to given value. */
-  helloWorldUix_not?: InputMaybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  helloWorldUix_not_contains?: InputMaybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  helloWorldUix_not_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are not contained in given list. */
-  helloWorldUix_not_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values not starting with the given string. */
-  helloWorldUix_not_starts_with?: InputMaybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  helloWorldUix_starts_with?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['ID']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']>;
@@ -1035,8 +1015,6 @@ export enum AuthorOrderByInput {
   BiographyDesc = 'biography_DESC',
   CreatedAtAsc = 'createdAt_ASC',
   CreatedAtDesc = 'createdAt_DESC',
-  HelloWorldUixAsc = 'helloWorldUix_ASC',
-  HelloWorldUixDesc = 'helloWorldUix_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
   NameAsc = 'name_ASC',
@@ -1051,7 +1029,6 @@ export enum AuthorOrderByInput {
 
 export type AuthorUpdateInput = {
   biography?: InputMaybe<Scalars['String']>;
-  helloWorldUix?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
   picture?: InputMaybe<AssetUpdateOneInlineInput>;
   posts?: InputMaybe<PostUpdateManyInlineInput>;
@@ -1077,7 +1054,6 @@ export type AuthorUpdateManyInlineInput = {
 
 export type AuthorUpdateManyInput = {
   biography?: InputMaybe<Scalars['String']>;
-  helloWorldUix?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
   title?: InputMaybe<Scalars['String']>;
 };
@@ -1170,25 +1146,6 @@ export type AuthorWhereInput = {
   /** All values that are not contained in given list. */
   createdAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
   createdBy?: InputMaybe<UserWhereInput>;
-  helloWorldUix?: InputMaybe<Scalars['String']>;
-  /** All values containing the given string. */
-  helloWorldUix_contains?: InputMaybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  helloWorldUix_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  helloWorldUix_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values that are not equal to given value. */
-  helloWorldUix_not?: InputMaybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  helloWorldUix_not_contains?: InputMaybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  helloWorldUix_not_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are not contained in given list. */
-  helloWorldUix_not_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values not starting with the given string. */
-  helloWorldUix_not_starts_with?: InputMaybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  helloWorldUix_starts_with?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['ID']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']>;
@@ -2837,7 +2794,8 @@ export type PageWhereUniqueInput = {
 
 export type Post = Node & {
   __typename?: 'Post';
-  authors: Array<Author>;
+  /** Who should be credited with writing this post? */
+  author?: Maybe<Author>;
   /** Write your blog post! */
   content: RichText;
   /** Upload or select a cover image to set as your Featured Image */
@@ -2856,7 +2814,6 @@ export type Post = Node & {
   history: Array<Version>;
   /** The unique identifier */
   id: Scalars['ID'];
-  markdown?: Maybe<Scalars['String']>;
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']>;
   /** User that last published this document */
@@ -2879,15 +2836,8 @@ export type Post = Node & {
 };
 
 
-export type PostAuthorsArgs = {
-  after?: InputMaybe<Scalars['String']>;
-  before?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+export type PostAuthorArgs = {
   locales?: InputMaybe<Array<Locale>>;
-  orderBy?: InputMaybe<AuthorOrderByInput>;
-  skip?: InputMaybe<Scalars['Int']>;
-  where?: InputMaybe<AuthorWhereInput>;
 };
 
 
@@ -2958,13 +2908,12 @@ export type PostConnection = {
 };
 
 export type PostCreateInput = {
-  authors?: InputMaybe<AuthorCreateManyInlineInput>;
+  author?: InputMaybe<AuthorCreateOneInlineInput>;
   content: Scalars['RichTextAST'];
   coverImage?: InputMaybe<AssetCreateOneInlineInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   date: Scalars['Date'];
   excerpt?: InputMaybe<Scalars['String']>;
-  markdown?: InputMaybe<Scalars['String']>;
   seo?: InputMaybe<SeoCreateOneInlineInput>;
   slug: Scalars['String'];
   tags?: InputMaybe<Array<Scalars['String']>>;
@@ -3005,9 +2954,7 @@ export type PostManyWhereInput = {
   OR?: InputMaybe<Array<PostWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
-  authors_every?: InputMaybe<AuthorWhereInput>;
-  authors_none?: InputMaybe<AuthorWhereInput>;
-  authors_some?: InputMaybe<AuthorWhereInput>;
+  author?: InputMaybe<AuthorWhereInput>;
   coverImage?: InputMaybe<AssetWhereInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
@@ -3078,25 +3025,6 @@ export type PostManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
-  markdown?: InputMaybe<Scalars['String']>;
-  /** All values containing the given string. */
-  markdown_contains?: InputMaybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  markdown_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  markdown_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values that are not equal to given value. */
-  markdown_not?: InputMaybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  markdown_not_contains?: InputMaybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  markdown_not_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are not contained in given list. */
-  markdown_not_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values not starting with the given string. */
-  markdown_not_starts_with?: InputMaybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  markdown_starts_with?: InputMaybe<Scalars['String']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -3192,8 +3120,6 @@ export enum PostOrderByInput {
   ExcerptDesc = 'excerpt_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
-  MarkdownAsc = 'markdown_ASC',
-  MarkdownDesc = 'markdown_DESC',
   PublishedAtAsc = 'publishedAt_ASC',
   PublishedAtDesc = 'publishedAt_DESC',
   SlugAsc = 'slug_ASC',
@@ -3207,12 +3133,11 @@ export enum PostOrderByInput {
 }
 
 export type PostUpdateInput = {
-  authors?: InputMaybe<AuthorUpdateManyInlineInput>;
+  author?: InputMaybe<AuthorUpdateOneInlineInput>;
   content?: InputMaybe<Scalars['RichTextAST']>;
   coverImage?: InputMaybe<AssetUpdateOneInlineInput>;
   date?: InputMaybe<Scalars['Date']>;
   excerpt?: InputMaybe<Scalars['String']>;
-  markdown?: InputMaybe<Scalars['String']>;
   seo?: InputMaybe<SeoUpdateOneInlineInput>;
   slug?: InputMaybe<Scalars['String']>;
   tags?: InputMaybe<Array<Scalars['String']>>;
@@ -3240,7 +3165,6 @@ export type PostUpdateManyInput = {
   content?: InputMaybe<Scalars['RichTextAST']>;
   date?: InputMaybe<Scalars['Date']>;
   excerpt?: InputMaybe<Scalars['String']>;
-  markdown?: InputMaybe<Scalars['String']>;
   tags?: InputMaybe<Array<Scalars['String']>>;
   title?: InputMaybe<Scalars['String']>;
 };
@@ -3298,9 +3222,7 @@ export type PostWhereInput = {
   OR?: InputMaybe<Array<PostWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
-  authors_every?: InputMaybe<AuthorWhereInput>;
-  authors_none?: InputMaybe<AuthorWhereInput>;
-  authors_some?: InputMaybe<AuthorWhereInput>;
+  author?: InputMaybe<AuthorWhereInput>;
   coverImage?: InputMaybe<AssetWhereInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
@@ -3371,25 +3293,6 @@ export type PostWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
-  markdown?: InputMaybe<Scalars['String']>;
-  /** All values containing the given string. */
-  markdown_contains?: InputMaybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  markdown_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  markdown_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values that are not equal to given value. */
-  markdown_not?: InputMaybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  markdown_not_contains?: InputMaybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  markdown_not_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are not contained in given list. */
-  markdown_not_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values not starting with the given string. */
-  markdown_not_starts_with?: InputMaybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  markdown_starts_with?: InputMaybe<Scalars['String']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -5925,28 +5828,68 @@ export enum _SystemDateTimeFieldVariation {
   Localization = 'localization'
 }
 
+export type AllPagesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type AllPagesQuery = { __typename?: 'Query', pages: Array<{ __typename?: 'Page', title: string, slug: string, content: { __typename?: 'RichText', html: string } }> };
+
 export type AllPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AllPostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', title: string, excerpt?: string | null, slug: string }> };
+export type AllPostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', title: string, slug: string, date: any, excerpt?: string | null, tags: Array<string>, coverImage?: { __typename?: 'Asset', url: string } | null }> };
+
+export type GetPageQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type GetPageQuery = { __typename?: 'Query', page?: { __typename?: 'Page', title: string, content: { __typename?: 'RichText', html: string } } | null };
 
 export type GetPostQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type GetPostQuery = { __typename?: 'Query', post?: { __typename?: 'Post', title: string, excerpt?: string | null } | null };
+export type GetPostQuery = { __typename?: 'Query', post?: { __typename?: 'Post', title: string, excerpt?: string | null, date: any, tags: Array<string>, author?: { __typename?: 'Author', name: string, authorTitle?: string | null, picture?: { __typename?: 'Asset', url: string } | null } | null, content: { __typename?: 'RichText', html: string }, coverImage?: { __typename?: 'Asset', url: string } | null } | null };
 
 
-export const AllPostsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPosts"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"posts"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"excerpt"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}}]} as unknown as DocumentNode<AllPostsQuery, AllPostsQueryVariables>;
-export const GetPostDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetPost"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"post"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"excerpt"}}]}}]}}]} as unknown as DocumentNode<GetPostQuery, GetPostQueryVariables>;
+export const AllPagesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPages"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pages"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"html"}}]}}]}}]}}]} as unknown as DocumentNode<AllPagesQuery, AllPagesQueryVariables>;
+export const AllPostsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPosts"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"posts"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"date"}},{"kind":"Field","name":{"kind":"Name","value":"excerpt"}},{"kind":"Field","name":{"kind":"Name","value":"tags"}},{"kind":"Field","name":{"kind":"Name","value":"coverImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"transformation"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"image"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"resize"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"clip"}},{"kind":"ObjectField","name":{"kind":"Name","value":"height"},"value":{"kind":"IntValue","value":"369"}},{"kind":"ObjectField","name":{"kind":"Name","value":"width"},"value":{"kind":"IntValue","value":"656"}}]}}]}}]}}]}]}}]}}]}}]} as unknown as DocumentNode<AllPostsQuery, AllPostsQueryVariables>;
+export const GetPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetPage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"page"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"html"}}]}}]}}]}}]} as unknown as DocumentNode<GetPageQuery, GetPageQueryVariables>;
+export const GetPostDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetPost"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"post"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"excerpt"}},{"kind":"Field","name":{"kind":"Name","value":"date"}},{"kind":"Field","name":{"kind":"Name","value":"tags"}},{"kind":"Field","name":{"kind":"Name","value":"author"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","alias":{"kind":"Name","value":"authorTitle"},"name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"picture"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"transformation"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"image"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"resize"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"clip"}},{"kind":"ObjectField","name":{"kind":"Name","value":"height"},"value":{"kind":"IntValue","value":"50"}},{"kind":"ObjectField","name":{"kind":"Name","value":"width"},"value":{"kind":"IntValue","value":"50"}}]}}]}}]}}]}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"html"}}]}},{"kind":"Field","name":{"kind":"Name","value":"coverImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<GetPostQuery, GetPostQueryVariables>;
 
+export const AllPages = gql`
+    query AllPages {
+  pages {
+    title
+    slug
+    content {
+      html
+    }
+  }
+}
+    `;
 export const AllPosts = gql`
     query AllPosts {
   posts {
     title
-    excerpt
     slug
+    date
+    excerpt
+    tags
+    coverImage {
+      url(transformation: {image: {resize: {fit: clip, height: 369, width: 656}}})
+    }
+  }
+}
+    `;
+export const GetPage = gql`
+    query GetPage($slug: String!) {
+  page(where: {slug: $slug}) {
+    title
+    content {
+      html
+    }
   }
 }
     `;
@@ -5955,6 +5898,21 @@ export const GetPost = gql`
   post(where: {slug: $slug}) {
     title
     excerpt
+    date
+    tags
+    author {
+      name
+      authorTitle: title
+      picture {
+        url(transformation: {image: {resize: {fit: clip, height: 50, width: 50}}})
+      }
+    }
+    content {
+      html
+    }
+    coverImage {
+      url
+    }
   }
 }
     `;
