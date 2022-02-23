@@ -14,8 +14,6 @@
   let posts = $AllPostsQueryStore.data?.posts
 </script>
 
-<h1 class="text-5xl my-5">Welcome to KitQL</h1>
-
 {#each posts as { title, slug, excerpt, coverImage, tags }}
   <section class="card text-center shadow-2xl mb-20">
     <figure class="px-10 pt-10">
