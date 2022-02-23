@@ -28,7 +28,7 @@
   <title>KitQL with GraphCMS | {title}</title>
 </svelte:head>
 
-<div class="sm:-mx-5 md:-mx-10 lg:-mx-20 xl:-mx-60 mb-10">
+<div class="sm:-mx-5 md:-mx-10 lg:-mx-20 xl:-mx-60 mb-10 rounded-3xl overflow-hidden">
   <img src={coverImage.url} alt={title} class="" />
 </div>
 

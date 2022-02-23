@@ -19,11 +19,7 @@
 {#each posts as { title, slug, excerpt, coverImage, tags }}
   <section class="card text-center shadow-2xl mb-20">
     <figure class="px-10 pt-10">
-      <img
-        class="rounded-xl"
-        src={coverImage.url}
-        alt={`Cover image for ${title}`}
-      />
+      <img class="rounded-xl" src={coverImage.url} alt={title} />
     </figure>
     <div class="card-body">
       <h2 class="title">{title}</h2>
