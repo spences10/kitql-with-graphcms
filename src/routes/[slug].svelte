@@ -1,18 +1,15 @@
 <script lang="ts" context="module">
-  import {
-    GetPageQuery,
-    GetPageQueryStore,
-  } from '$lib/graphql/_kitql/graphqlStores'
+  import { KQL_GetPage } from '$lib/graphql/_kitql/graphqlStores'
 
   export const load = async ({ params, fetch }) => {
     const { slug } = params
-    await GetPageQuery({ fetch, variables: { slug } })
+    await KQL_GetPage.query({ fetch, variables: { slug } })
     return {}
   }
 </script>
 
 <script lang="ts">
-  let page = $GetPageQueryStore.data?.page
+  let page = $KQL_GetPage.data?.page
 </script>
 
 <svelte:head>

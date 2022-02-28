@@ -1,18 +1,15 @@
 <script context="module">
-  import {
-    GetPostQuery,
-    GetPostQueryStore,
-  } from '$lib/graphql/_kitql/graphqlStores'
+  import { KQL_GetPost } from '$lib/graphql/_kitql/graphqlStores'
 
   export const load = async ({ params, fetch }) => {
     const { slug } = params
-    if (slug) await GetPostQuery({ fetch, variables: { slug } })
+    if (slug) await KQL_GetPost.query({ fetch, variables: { slug } })
     return {}
   }
 </script>
 
 <script lang="ts">
-  let post = $GetPostQueryStore.data?.post
+  let post = $KQL_GetPost.data?.post
 
   const {
     title,

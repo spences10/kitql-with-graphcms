@@ -1,17 +1,14 @@
 <script lang="ts" context="module">
-  import {
-    AllPostsQuery,
-    AllPostsQueryStore,
-  } from '$lib/graphql/_kitql/graphqlStores'
+  import { KQL_AllPosts } from '$lib/graphql/_kitql/graphqlStores'
 
   export const load = async ({ fetch }) => {
-    await AllPostsQuery({ fetch })
+    await KQL_AllPosts.query({ fetch })
     return {}
   }
 </script>
 
 <script lang="ts">
-  let posts = $AllPostsQueryStore.data?.posts
+  let posts = $KQL_AllPosts.data?.posts
 </script>
 
 {#each posts as { title, slug, excerpt, coverImage, tags }}

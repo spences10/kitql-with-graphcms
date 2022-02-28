@@ -1,21 +1,18 @@
 <script lang="ts" context="module">
   import Nav from '$lib/components/nav.svelte'
-  import {
-    AllPagesQuery,
-    AllPagesQueryStore,
-  } from '$lib/graphql/_kitql/graphqlStores'
+  import { KQL_AllPages } from '$lib/graphql/_kitql/graphqlStores'
   import { onMount } from 'svelte'
   import { themeChange } from 'theme-change'
   import '../app.css'
 
   export const load = async ({ fetch }) => {
-    await AllPagesQuery({ fetch })
+    await KQL_AllPages.query({ fetch })
     return {}
   }
 </script>
 
 <script>
-  let pages = $AllPagesQueryStore.data?.pages
+  let pages = $KQL_AllPages.data?.pages
 
   onMount(async () => {
     themeChange(false)
