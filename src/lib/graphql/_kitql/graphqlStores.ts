@@ -81,7 +81,7 @@ function KQL_AllPagesStore() {
 		/**
 		 * Patch the store with a new object at the dedicated xPath location
 		 */
-		patch(newData: Object, xPath: string | null = null, id: string | number | null = null) {
+		patch(newData: Object, xPath: string | null = null) {
 			// prettier-ignore
 			const updatedStore = kitQLClient.patch<Types.AllPagesQuery, Types.AllPagesQueryVariables>(cacheKey, get(KQL_AllPages), newData, xPath);
 			set(updatedStore);
@@ -171,7 +171,7 @@ function KQL_AllPostsStore() {
 		/**
 		 * Patch the store with a new object at the dedicated xPath location
 		 */
-		patch(newData: Object, xPath: string | null = null, id: string | number | null = null) {
+		patch(newData: Object, xPath: string | null = null) {
 			// prettier-ignore
 			const updatedStore = kitQLClient.patch<Types.AllPostsQuery, Types.AllPostsQueryVariables>(cacheKey, get(KQL_AllPosts), newData, xPath);
 			set(updatedStore);
@@ -261,7 +261,7 @@ function KQL_GetPageStore() {
 		/**
 		 * Patch the store with a new object at the dedicated xPath location
 		 */
-		patch(newData: Object, xPath: string | null = null, id: string | number | null = null) {
+		patch(newData: Object, xPath: string | null = null) {
 			// prettier-ignore
 			const updatedStore = kitQLClient.patch<Types.GetPageQuery, Types.GetPageQueryVariables>(cacheKey, get(KQL_GetPage), newData, xPath);
 			set(updatedStore);
@@ -351,7 +351,7 @@ function KQL_GetPostStore() {
 		/**
 		 * Patch the store with a new object at the dedicated xPath location
 		 */
-		patch(newData: Object, xPath: string | null = null, id: string | number | null = null) {
+		patch(newData: Object, xPath: string | null = null) {
 			// prettier-ignore
 			const updatedStore = kitQLClient.patch<Types.GetPostQuery, Types.GetPostQueryVariables>(cacheKey, get(KQL_GetPost), newData, xPath);
 			set(updatedStore);
