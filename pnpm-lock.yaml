@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@kitql/all-in': 0.2.2
+  '@kitql/all-in': 0.2.3
   '@sveltejs/adapter-vercel': 1.0.0-next.45
   '@sveltejs/kit': next
   '@tailwindcss/typography': 0.5.2
@@ -26,7 +26,7 @@ specifiers:
   typescript: 4.6.2
 
 devDependencies:
-  '@kitql/all-in': 0.2.2_graphql@16.3.0+typescript@4.6.2
+  '@kitql/all-in': 0.2.3_graphql@16.3.0+typescript@4.6.2
   '@sveltejs/adapter-vercel': 1.0.0-next.45
   '@sveltejs/kit': 1.0.0-next.289_svelte@3.46.4
   '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.23
@@ -846,7 +846,7 @@ packages:
       '@graphql-codegen/plugin-helpers': 2.4.2_graphql@16.3.0
       '@graphql-tools/optimize': 1.2.0_graphql@16.3.0
       '@graphql-tools/relay-operation-optimizer': 6.4.2_graphql@16.3.0
-      '@graphql-tools/utils': 8.6.1_graphql@16.3.0
+      '@graphql-tools/utils': 8.6.2_graphql@16.3.0
       auto-bind: 4.0.0
       change-case-all: 1.0.14
       dependency-graph: 0.11.0
@@ -913,8 +913,8 @@ packages:
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@graphql-tools/graphql-tag-pluck': 7.1.5_graphql@16.3.0
-      '@graphql-tools/utils': 8.6.1_graphql@16.3.0
+      '@graphql-tools/graphql-tag-pluck': 7.1.6_graphql@16.3.0
+      '@graphql-tools/utils': 8.6.2_graphql@16.3.0
       globby: 11.1.0
       graphql: 16.3.0
       tslib: 2.3.1
@@ -1006,7 +1006,7 @@ packages:
       '@babel/parser': 7.17.3
       '@babel/traverse': 7.17.3
       '@babel/types': 7.17.0
-      '@graphql-tools/utils': 8.6.1_graphql@16.3.0
+      '@graphql-tools/utils': 8.6.2_graphql@16.3.0
       graphql: 16.3.0
       tslib: 2.3.1
     transitivePeerDependencies:
@@ -1248,8 +1248,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.11
     dev: true
 
-  /@kitql/all-in/0.2.2_graphql@16.3.0+typescript@4.6.2:
-    resolution: {integrity: sha512-M0fSGpbR0qFDbP74Y97FrACB5pxCZAbyYm3M+WBnNw0VWD0HKdwMEjQKQa0ZtgqYr9Gvz9xHDlEQ88DnS48yUQ==}
+  /@kitql/all-in/0.2.3_graphql@16.3.0+typescript@4.6.2:
+    resolution: {integrity: sha512-/fFZjb+oXZebAU2AoRBAXNqI/hopYTOWBMDFaf3YuzzhnLeEtfolpvumyeZ9OFfi2tG+gUuSMDKA0ErmvMMtEg==}
     peerDependencies:
       graphql: ^15.0.0 || ^16.0.0
     dependencies:
@@ -1262,10 +1262,10 @@ packages:
       '@graphql-codegen/typescript-resolvers': 2.5.2_graphql@16.3.0
       '@graphql-eslint/eslint-plugin': 3.8.0_graphql@16.3.0+typescript@4.6.2
       '@graphql-typed-document-node/core': 3.1.1_graphql@16.3.0
-      '@kitql/client': 0.2.2_graphql@16.3.0
-      '@kitql/graphql-codegen': 0.2.2_graphql@16.3.0
-      '@kitql/module-codegen': 0.1.8_graphql@16.3.0
-      '@kitql/vite-plugin-watch-and-run': 0.1.5
+      '@kitql/client': 0.2.3_graphql@16.3.0
+      '@kitql/graphql-codegen': 0.2.3_graphql@16.3.0
+      '@kitql/module-codegen': 0.1.9_graphql@16.3.0
+      '@kitql/vite-plugin-watch-and-run': 0.1.6
       graphql: 16.3.0
     transitivePeerDependencies:
       - '@types/node'
@@ -1277,18 +1277,17 @@ packages:
       - zen-observable
     dev: true
 
-  /@kitql/client/0.2.2_graphql@16.3.0:
-    resolution: {integrity: sha512-E2YF2Gn6zvTejHqjth+hNHraL7xyA5ezGzI7pPXmQKxv7ff/ExnptOirkIo79gPD+X1xLsR/Udsqm9WA8k8+wQ==}
+  /@kitql/client/0.2.3_graphql@16.3.0:
+    resolution: {integrity: sha512-dFqPaVig5THIMfMmEuD5l6zuQzLDMvJNxtMye++6BCuproLMS+/sRjrI/ubEu6rCTDaldrWFHbr0EQGLNTOffw==}
     peerDependencies:
       graphql: ^15.0.0 || ^16.0.0
     dependencies:
-      '@kitql/helper': 0.1.5
+      '@kitql/helper': 0.1.6
       graphql: 16.3.0
-      safe-stable-stringify: 2.3.1
     dev: true
 
-  /@kitql/graphql-codegen/0.2.2_graphql@16.3.0:
-    resolution: {integrity: sha512-Pfq4yTuX9xZFZQ3ydEpNC3X6NSn15ZJFlAp4N5GowggG1+urzUTFtMRtVZTi/pI4b6ItU8jTb0l5LSJSYsSIug==}
+  /@kitql/graphql-codegen/0.2.3_graphql@16.3.0:
+    resolution: {integrity: sha512-CegDlvuW5YYm4H2/Qb3yJu7zVC4x3XPd6/BM6GWtqy1L/UwuAXcGFl4O2YJHYBuWMm6E7i68jNt1xgZmP0rX6g==}
     peerDependencies:
       graphql: ^15.0.0 || ^16.0.0
     dependencies:
@@ -1302,24 +1301,24 @@ packages:
       - supports-color
     dev: true
 
-  /@kitql/helper/0.1.5:
-    resolution: {integrity: sha512-RoXx7WnlQ5j7RJlAUsueGn1LG+smhJ4Et6AR4iB6oZZM03pqxLJAFC6g8RWX6H8v1cNXrVH7Xzv95JnpRbq5xg==}
+  /@kitql/helper/0.1.6:
+    resolution: {integrity: sha512-YZNKR4kbGXvp3S5jQshFRzPkieFfU/LQXJH4YeDYoL+exh3FRSL9fOcY9ubagAFKijo4pOBHxkcFLFLx2Jrj7w==}
     dev: true
 
-  /@kitql/module-codegen/0.1.8_graphql@16.3.0:
-    resolution: {integrity: sha512-0SmjZfebcmmBJiI6GRCTAF1mLjpyBTMLbUgs1IeF42iK/F/shh/kKPyDXYDBQdwrbFppBImxxuNZt9eBxDiD+g==}
+  /@kitql/module-codegen/0.1.9_graphql@16.3.0:
+    resolution: {integrity: sha512-jdLOp6+qERZalYgzZDeWm969PJYKqAwrL1mi2/NdfCle1ZwayOkEpwB+uVNhOW1Nz/uDzuSeJjjdNL6fAWS+6Q==}
     peerDependencies:
       graphql: ^15.0.0 || ^16.0.0
     dependencies:
-      '@kitql/helper': 0.1.5
+      '@kitql/helper': 0.1.6
       graphql: 16.3.0
       yaml: 1.10.2
     dev: true
 
-  /@kitql/vite-plugin-watch-and-run/0.1.5:
-    resolution: {integrity: sha512-9NwNGpAfYEA+B3jdUgHqGTKrFQZyP+wXoD5GUtceDhUlNwjP6w6wrwaOzR0gPFZvu1nbWyUcwJ8CXzdGiA+JSw==}
+  /@kitql/vite-plugin-watch-and-run/0.1.6:
+    resolution: {integrity: sha512-22FPvpkbeyr4MT7K8P0wIJV2lKREWv3Wrn6c+47VufDmghAvnjCOVuKdq0k0T8Wsu2ecaspKkFkRiIx28GxDiw==}
     dependencies:
-      '@kitql/helper': 0.1.5
+      '@kitql/helper': 0.1.6
       micromatch: 4.0.4
     dev: true
 
@@ -3080,7 +3079,7 @@ packages:
       '@graphql-tools/load': 7.5.2_graphql@16.3.0
       '@graphql-tools/merge': 8.2.3_graphql@16.3.0
       '@graphql-tools/url-loader': 7.7.2_graphql@16.3.0
-      '@graphql-tools/utils': 8.6.1_graphql@16.3.0
+      '@graphql-tools/utils': 8.6.2_graphql@16.3.0
       cosmiconfig: 7.0.1
       cosmiconfig-toml-loader: 1.0.0
       graphql: 16.3.0
@@ -4481,11 +4480,6 @@ packages:
 
   /safe-buffer/5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
-    dev: true
-
-  /safe-stable-stringify/2.3.1:
-    resolution: {integrity: sha512-kYBSfT+troD9cDA85VDnHZ1rpHC50O0g1e6WlGHVCz/g+JS+9WKLj+XwFYyR8UbrZN8ll9HUpDAAddY58MGisg==}
-    engines: {node: '>=10'}
     dev: true
 
   /safer-buffer/2.1.2:
