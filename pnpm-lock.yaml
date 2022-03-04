@@ -8,7 +8,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': 5.13.0
   '@typescript-eslint/parser': 5.13.0
   autoprefixer: 10.4.2
-  daisyui: 2.2.2
+  daisyui: 2.4.0
   eslint: 8.10.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-svelte3: 3.4.1
@@ -28,12 +28,12 @@ specifiers:
 devDependencies:
   '@kitql/all-in': 0.2.3_graphql@16.3.0+typescript@4.6.2
   '@sveltejs/adapter-vercel': 1.0.0-next.45
-  '@sveltejs/kit': 1.0.0-next.289_svelte@3.46.4
+  '@sveltejs/kit': 1.0.0-next.291_svelte@3.46.4
   '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.23
   '@typescript-eslint/eslint-plugin': 5.13.0_33fffc354ccfa91fbe7d1677b9395a0a
   '@typescript-eslint/parser': 5.13.0_eslint@8.10.0+typescript@4.6.2
   autoprefixer: 10.4.2_postcss@8.4.7
-  daisyui: 2.2.2_4585f94de3eac54c17be782e8b51352c
+  daisyui: 2.4.0_4585f94de3eac54c17be782e8b51352c
   eslint: 8.10.0
   eslint-config-prettier: 8.5.0_eslint@8.10.0
   eslint-plugin-svelte3: 3.4.1_eslint@8.10.0+svelte@3.46.4
@@ -1386,8 +1386,8 @@ packages:
       esbuild: 0.14.23
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.289_svelte@3.46.4:
-    resolution: {integrity: sha512-P84m/yVPxBj5QM7Alk7mC2IW+/Td547Zgu+wuoTaV9JisGWkBRdGbxYeG5u5RZIN2BvkcWRnzl1UYp8mAX+XCg==}
+  /@sveltejs/kit/1.0.0-next.291_svelte@3.46.4:
+    resolution: {integrity: sha512-mFd1EJbxoyPGiomYwYhZnjNLPYahCC2gHfKvPetguL/7BCHcyUjjYQbwTTmjVxtgBs0oLzKVA9bt45gpr9JqBQ==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
@@ -2234,21 +2234,30 @@ packages:
       - encoding
     dev: true
 
+  /css-selector-tokenizer/0.8.0:
+    resolution: {integrity: sha512-Jd6Ig3/pe62/qe5SBPTN8h8LeUg/pT4lLgtavPf7updwwHpvFzxvOQBHYj2LZDMjUnBzgvIUSjRcf6oT5HzHFg==}
+    dependencies:
+      cssesc: 3.0.0
+      fastparse: 1.1.2
+    dev: true
+
   /cssesc/3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
     hasBin: true
     dev: true
 
-  /daisyui/2.2.2_4585f94de3eac54c17be782e8b51352c:
-    resolution: {integrity: sha512-QmM4rVsZvq/r4i9oWGe7UkeM9J25hbO+ZUXoT4u3QWsnb6nGe6R1KlPPqivd9xL/Za+YFspiwd3lpOG9ojW+cQ==}
+  /daisyui/2.4.0_4585f94de3eac54c17be782e8b51352c:
+    resolution: {integrity: sha512-a03h5h+qQ70MohTiZW4FIf7+fs0mG0irhagImFMoVxPXTklI/p7Pys0sfgJEPOEcBLPX2LD7IO1sDw1PkLrERg==}
     peerDependencies:
       autoprefixer: ^10.0.2
-      postcss: ^8.0.9
+      postcss: ^8.1.6
     dependencies:
       autoprefixer: 10.4.2_postcss@8.4.7
       color: 4.2.1
+      css-selector-tokenizer: 0.8.0
       postcss: 8.4.7
+      postcss-js: 4.0.0_postcss@8.4.7
       tailwindcss: 3.0.23_autoprefixer@10.4.2
     transitivePeerDependencies:
       - ts-node
@@ -2832,6 +2841,10 @@ packages:
 
   /fast-levenshtein/2.0.6:
     resolution: {integrity: sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=}
+    dev: true
+
+  /fastparse/1.1.2:
+    resolution: {integrity: sha512-483XLLxTVIwWK3QTrMGRqUfUpoOs/0hbQrl2oz4J0pAcm3A3bu84wxTFqGqkJzewCLdME38xJLJAxBABfQT8sQ==}
     dev: true
 
   /fastq/1.13.0:
