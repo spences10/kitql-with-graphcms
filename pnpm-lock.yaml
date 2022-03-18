@@ -7,7 +7,7 @@ specifiers:
   '@tailwindcss/typography': 0.5.2
   '@typescript-eslint/eslint-plugin': 5.15.0
   '@typescript-eslint/parser': 5.15.0
-  autoprefixer: 10.4.2
+  autoprefixer: 10.4.4
   daisyui: 2.8.0
   eslint: 8.11.0
   eslint-config-prettier: 8.5.0
@@ -28,12 +28,12 @@ specifiers:
 devDependencies:
   '@kitql/all-in': 0.3.3_graphql@16.3.0+typescript@4.6.2
   '@sveltejs/adapter-vercel': 1.0.0-next.47
-  '@sveltejs/kit': 1.0.0-next.298_svelte@3.46.4
+  '@sveltejs/kit': 1.0.0-next.301_svelte@3.46.4
   '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.23
   '@typescript-eslint/eslint-plugin': 5.15.0_f2c49ce7d0e93ebcfdb4b7d25b131b28
   '@typescript-eslint/parser': 5.15.0_eslint@8.11.0+typescript@4.6.2
-  autoprefixer: 10.4.2_postcss@8.4.12
-  daisyui: 2.8.0_5b85c1fed7ef071ac62242eeecc934d8
+  autoprefixer: 10.4.4_postcss@8.4.12
+  daisyui: 2.8.0_081650f2f4dba35b17265937ab2a2ec0
   eslint: 8.11.0
   eslint-config-prettier: 8.5.0_eslint@8.11.0
   eslint-plugin-svelte3: 3.4.1_eslint@8.11.0+svelte@3.46.4
@@ -45,7 +45,7 @@ devDependencies:
   svelte: 3.46.4
   svelte-check: 2.4.6_116eeb6b28be41779e5e81ff686c3b09
   svelte-preprocess: 4.10.4_d61f7298692c4dce2f25e1ef74e972be
-  tailwindcss: 3.0.23_autoprefixer@10.4.2
+  tailwindcss: 3.0.23_autoprefixer@10.4.4
   theme-change: 2.0.2
   tslib: 2.3.1
   typescript: 4.6.2
@@ -119,7 +119,7 @@ packages:
       '@babel/compat-data': 7.17.0
       '@babel/core': 7.17.5
       '@babel/helper-validator-option': 7.16.7
-      browserslist: 4.19.3
+      browserslist: 4.20.2
       semver: 6.3.0
     dev: true
 
@@ -1383,8 +1383,8 @@ packages:
       esbuild: 0.14.23
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.298_svelte@3.46.4:
-    resolution: {integrity: sha512-HUna2KgBc9NdeSCAqZBo6NUuRHab1tRMW6O3OtLvPs7ldSY+cEarDmUJb1ZeHwPrbcS2RTHSnBNNc0l+UyiFIw==}
+  /@sveltejs/kit/1.0.0-next.301_svelte@3.46.4:
+    resolution: {integrity: sha512-F/XP1VEu+fpvgY04JekNxAFupccNMKOyXtbox0LwNJvBulL15/Tzy6tf4g+9t2Jy7mprwI3h0ZC9G/nVujRFnQ==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
@@ -1439,7 +1439,7 @@ packages:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
-      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      tailwindcss: 3.0.23_autoprefixer@10.4.4
     dev: true
 
   /@tootallnate/once/2.0.0:
@@ -1778,16 +1778,16 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: true
 
-  /autoprefixer/10.4.2_postcss@8.4.12:
-    resolution: {integrity: sha512-9fOPpHKuDW1w/0EKfRmVnxTDt8166MAnLI3mgZ1JCnhNtYWxcJ6Ud5CO/AVOZi/AvFa8DY9RTy3h3+tFBlrrdQ==}
+  /autoprefixer/10.4.4_postcss@8.4.12:
+    resolution: {integrity: sha512-Tm8JxsB286VweiZ5F0anmbyGiNI3v3wGv3mz9W+cxEDYB/6jbnj6GM9H9mK3wIL8ftgl+C07Lcwb8PG5PCCPzA==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      browserslist: 4.19.3
-      caniuse-lite: 1.0.30001312
-      fraction.js: 4.1.3
+      browserslist: 4.20.2
+      caniuse-lite: 1.0.30001317
+      fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
       postcss: 8.4.12
@@ -1880,13 +1880,13 @@ packages:
       fill-range: 7.0.1
     dev: true
 
-  /browserslist/4.19.3:
-    resolution: {integrity: sha512-XK3X4xtKJ+Txj8G5c30B4gsm71s69lqXlkYui4s6EkKxuv49qjYlY6oVd+IFJ73d4YymtM3+djvvt/R/iJwwDg==}
+  /browserslist/4.20.2:
+    resolution: {integrity: sha512-CQOBCqp/9pDvDbx3xfMi+86pr4KXIf2FDkTTdeuYw8OxS9t898LA1Khq57gtufFILXpfgsSx5woNgsBgvGjpsA==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001312
-      electron-to-chromium: 1.4.75
+      caniuse-lite: 1.0.30001317
+      electron-to-chromium: 1.4.87
       escalade: 3.1.1
       node-releases: 2.0.2
       picocolors: 1.0.0
@@ -1959,8 +1959,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /caniuse-lite/1.0.30001312:
-    resolution: {integrity: sha512-Wiz1Psk2MEK0pX3rUzWaunLTZzqS2JYZFzNKqAiJGiuxIjRPLgV6+VDPOg6lQOUxmDwhTlh198JsTTi8Hzw6aQ==}
+  /caniuse-lite/1.0.30001317:
+    resolution: {integrity: sha512-xIZLh8gBm4dqNX0gkzrBeyI86J2eCjWzYAs40q88smG844YIrN4tVQl/RhquHvKEKImWWFIVh1Lxe5n1G/N+GQ==}
     dev: true
 
   /capital-case/1.0.4:
@@ -2244,18 +2244,18 @@ packages:
     hasBin: true
     dev: true
 
-  /daisyui/2.8.0_5b85c1fed7ef071ac62242eeecc934d8:
+  /daisyui/2.8.0_081650f2f4dba35b17265937ab2a2ec0:
     resolution: {integrity: sha512-AU6JH6X5PI3ejM/w/1TdrWlyVGd7MgCweTCWVzmGvt5awoDSllg9fcsyXTfB48eDMRKUZ3IUC4KZv0Wde7MXjA==}
     peerDependencies:
       autoprefixer: ^10.0.2
       postcss: ^8.1.6
     dependencies:
-      autoprefixer: 10.4.2_postcss@8.4.12
+      autoprefixer: 10.4.4_postcss@8.4.12
       color: 4.2.1
       css-selector-tokenizer: 0.8.0
       postcss: 8.4.12
       postcss-js: 4.0.0_postcss@8.4.12
-      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      tailwindcss: 3.0.23_autoprefixer@10.4.4
     transitivePeerDependencies:
       - ts-node
     dev: true
@@ -2405,8 +2405,8 @@ packages:
       safe-buffer: 5.2.1
     dev: true
 
-  /electron-to-chromium/1.4.75:
-    resolution: {integrity: sha512-LxgUNeu3BVU7sXaKjUDD9xivocQLxFtq6wgERrutdY/yIOps3ODOZExK1jg8DTEg4U8TUCb5MLGeWFOYuxjF3Q==}
+  /electron-to-chromium/1.4.87:
+    resolution: {integrity: sha512-EXXTtDHFUKdFVkCnhauU7Xp8wmFC1ZG6GK9a1BeI2vvNhy61IwfNPo/CRexhf7mh4ajxAHJPind62BzpzVUeuQ==}
     dev: true
 
   /elegant-spinner/1.0.1:
@@ -2951,8 +2951,8 @@ packages:
       web-streams-polyfill: 4.0.0-beta.1
     dev: true
 
-  /fraction.js/4.1.3:
-    resolution: {integrity: sha512-pUHWWt6vHzZZiQJcM6S/0PXfS+g6FM4BF5rj9wZyreivhQPdsh5PpE25VtSNxq80wHS5RfY51Ii+8Z0Zl/pmzg==}
+  /fraction.js/4.2.0:
+    resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
 
   /fs.realpath/1.0.0:
@@ -4859,7 +4859,7 @@ packages:
       - encoding
     dev: true
 
-  /tailwindcss/3.0.23_autoprefixer@10.4.2:
+  /tailwindcss/3.0.23_autoprefixer@10.4.4:
     resolution: {integrity: sha512-+OZOV9ubyQ6oI2BXEhzw4HrqvgcARY38xv3zKcjnWtMIZstEsXdI9xftd1iB7+RbOnj2HOEzkA0OyB5BaSxPQA==}
     engines: {node: '>=12.13.0'}
     hasBin: true
@@ -4867,7 +4867,7 @@ packages:
       autoprefixer: ^10.0.2
     dependencies:
       arg: 5.0.1
-      autoprefixer: 10.4.2_postcss@8.4.12
+      autoprefixer: 10.4.4_postcss@8.4.12
       chalk: 4.1.2
       chokidar: 3.5.3
       color-name: 1.1.4
