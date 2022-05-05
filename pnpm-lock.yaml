@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@kitql/all-in': 0.6.3
@@ -12,7 +12,7 @@ specifiers:
   eslint: 8.14.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-svelte3: 3.4.1
-  graphql: 16.4.0
+  graphql: 16.3.0
   postcss: 8.4.12
   postcss-load-config: 3.1.4
   prettier: 2.6.2
@@ -33,15 +33,15 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.21.0_ade6595cb7be1524e723c025c098ae5d
   '@typescript-eslint/parser': 5.21.0_eslint@8.14.0+typescript@4.6.4
   autoprefixer: 10.4.5_postcss@8.4.12
-  daisyui: 2.14.2_c01214db2e04c60602bae73116393d69
+  daisyui: 2.14.2_yajbjwzoatdamav244yrmoj5ne
   eslint: 8.14.0
   eslint-config-prettier: 8.5.0_eslint@8.14.0
-  eslint-plugin-svelte3: 3.4.1_eslint@8.14.0+svelte@3.47.0
-  graphql: 16.4.0
+  eslint-plugin-svelte3: 3.4.1_2vfxa6cecroc3y2fsbrsrarodq
+  graphql: 16.3.0
   postcss: 8.4.12
   postcss-load-config: 3.1.4_postcss@8.4.12
   prettier: 2.6.2
-  prettier-plugin-svelte: 2.7.0_prettier@2.6.2+svelte@3.47.0
+  prettier-plugin-svelte: 2.7.0_sqtt6dzjlskmywoml5ykunxlce
   svelte: 3.47.0
   svelte-check: 2.7.0_8ad6e20ce4e2d7da0239e3010622d126
   svelte-preprocess: 4.10.6_3e94bd5f63da6c30abdbff8a8416af74
@@ -2375,7 +2375,7 @@ packages:
     hasBin: true
     dev: true
 
-  /daisyui/2.14.2_c01214db2e04c60602bae73116393d69:
+  /daisyui/2.14.2_yajbjwzoatdamav244yrmoj5ne:
     resolution: {integrity: sha512-/FxRBLC/xydIqxv+EJHfmmH+UndrwcaAxbWsS/oVLnoeOdb4MN4VlkJ3sYOYrl3tmw/D1L5Lp0PK07ebY0O6QA==}
     peerDependencies:
       autoprefixer: ^10.0.2
@@ -2797,7 +2797,7 @@ packages:
       eslint: 8.14.0
     dev: true
 
-  /eslint-plugin-svelte3/3.4.1_eslint@8.14.0+svelte@3.47.0:
+  /eslint-plugin-svelte3/3.4.1_2vfxa6cecroc3y2fsbrsrarodq:
     resolution: {integrity: sha512-7p59WG8qV8L6wLdl4d/c3mdjkgVglQCdv5XOTk/iNPBKXuuV+Q0eFP5Wa6iJd/G2M1qR3BkLPEzaANOqKAZczw==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -3316,11 +3316,6 @@ packages:
   /graphql/16.3.0:
     resolution: {integrity: sha512-xm+ANmA16BzCT5pLjuXySbQVFwH3oJctUVdy81w1sV0vBU0KgDdBGtxQOUd5zqOBk/JayAFeG8Dlmeq74rjm/A==}
     engines: {node: ^12.22.0 || ^14.16.0 || >=16.0.0}
-    dev: true
-
-  /graphql/16.4.0:
-    resolution: {integrity: sha512-tYDNcRvKCcfHREZYje3v33NSrSD/ZpbWWdPtBtUUuXx9NCo/2QDxYzNqCnMvfsrnbwRpEHMovVrPu/ERoLrIRg==}
-    engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
     dev: true
 
   /has-ansi/2.0.0:
@@ -4376,7 +4371,7 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /prettier-plugin-svelte/2.7.0_prettier@2.6.2+svelte@3.47.0:
+  /prettier-plugin-svelte/2.7.0_sqtt6dzjlskmywoml5ykunxlce:
     resolution: {integrity: sha512-fQhhZICprZot2IqEyoiUYLTRdumULGRvw0o4dzl5jt0jfzVWdGqeYW27QTWAeXhoupEZJULmNoH3ueJwUWFLIA==}
     peerDependencies:
       prettier: ^1.16.4 || ^2.0.0
@@ -4896,7 +4891,7 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check/2.7.0_8ad6e20ce4e2d7da0239e3010622d126:
+  /svelte-check/2.7.0_rlloedhe4ll5uarz4maqmiwrey:
     resolution: {integrity: sha512-GrvG24j0+i8AOm0k0KyJ6Dqc+TAR2yzB7rtS4nljHStunVxCTr/1KYlv4EsOeoqtHLzeWMOd5D2O6nDdP/yw4A==}
     hasBin: true
     peerDependencies:
