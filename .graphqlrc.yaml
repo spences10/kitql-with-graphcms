@@ -1,13 +1,13 @@
 # Typical File for extension: vscode-graphql & CodeGen!
 projects:
   default:
-    schema: https://api-eu-west-2.graphcms.com/v2/ckzzp9r4t83or01zah1z35air/master
+    schema: ${VITE_GRAPHQL_API}
     documents:
       - '**/*.gql'
     extensions:
       endpoints:
         default:
-          url: https://api-eu-west-2.graphcms.com/v2/ckzzp9r4t83or01zah1z35air/master
+          url: ${VITE_GRAPHQL_API}
       codegen:
         generates:
           ./src/lib/graphql/_kitql/graphqlTypes.ts:
