@@ -8,3 +8,4 @@ node_modules
 !.env.example
 .pnpm-debug.log
 .vercel
+.vercel_build_output
