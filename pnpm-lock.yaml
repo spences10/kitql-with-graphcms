@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@kitql/all-in': 0.6.4
+  '@kitql/all-in': 0.6.7
   '@sveltejs/adapter-vercel': 1.0.0-next.56
   '@sveltejs/kit': next
   '@tailwindcss/typography': 0.5.2
@@ -25,7 +25,7 @@ specifiers:
   typescript: 4.7.2
 
 dependencies:
-  '@kitql/all-in': 0.6.4_typescript@4.7.2
+  '@kitql/all-in': 0.6.7_typescript@4.7.2
 
 devDependencies:
   '@sveltejs/adapter-vercel': 1.0.0-next.56
@@ -1241,8 +1241,8 @@ packages:
       '@jridgewell/resolve-uri': 3.0.7
       '@jridgewell/sourcemap-codec': 1.4.13
 
-  /@kitql/all-in/0.6.4_typescript@4.7.2:
-    resolution: {integrity: sha512-sPC5z7hGHw3IgQipkqm9S67N6aznKh/6lBaNlDGHAKIcg1gCe1hm+zb0rl7yhBniY/SI8opkdrvhn2qrAAqSZA==}
+  /@kitql/all-in/0.6.7_typescript@4.7.2:
+    resolution: {integrity: sha512-CogcD1rpR15Ife+JvPa1g11mZ72CpRP32IIQHStGIEtIPombAZ28LzLfpqMCYhMZyRxhotm3qcjqzGZDMexXIQ==}
     dependencies:
       '@graphql-codegen/cli': 2.6.2_fvukzu7z6wfjxvwqanosrw6g6m
       '@graphql-codegen/graphql-modules-preset': 2.3.11_graphql@16.5.0
@@ -1254,10 +1254,10 @@ packages:
       '@graphql-codegen/typescript-resolvers': 2.6.4_graphql@16.5.0
       '@graphql-eslint/eslint-plugin': 3.10.3_fvukzu7z6wfjxvwqanosrw6g6m
       '@graphql-typed-document-node/core': 3.1.1_graphql@16.5.0
-      '@kitql/client': 0.5.4_typescript@4.7.2
+      '@kitql/client': 0.5.7_typescript@4.7.2
       '@kitql/graphql-codegen': 0.5.2_graphql@16.5.0
-      '@kitql/module-codegen': 0.3.1_graphql@16.5.0
-      '@kitql/vite-plugin-watch-and-run': 0.3.1
+      '@kitql/module-codegen': 0.3.4_graphql@16.5.0
+      '@kitql/vite-plugin-watch-and-run': 0.3.4
       graphql: 16.5.0
     transitivePeerDependencies:
       - '@types/node'
@@ -1270,11 +1270,11 @@ packages:
       - zenObservable
     dev: false
 
-  /@kitql/client/0.5.4_typescript@4.7.2:
-    resolution: {integrity: sha512-0RqJuWT5Ki5xliVbfNtLBOIhw0SJg9AB3hV+yckhhir8Xu9XEyQRIVRXQZQ3xZgsrxW9evOe4lKbkSmxttBZcg==}
+  /@kitql/client/0.5.7_typescript@4.7.2:
+    resolution: {integrity: sha512-tPPNHj+9/ZcmKbvzPRA+o3P1arb6WwRe5FiB7WNK/rEJvKl0BKjyQdwnWSHpYnSvvKkX2kMzlwu8WcJZZPuT6g==}
     dependencies:
-      '@kitql/all-in': 0.6.4_typescript@4.7.2
-      '@kitql/helper': 0.3.1
+      '@kitql/all-in': 0.6.7_typescript@4.7.2
+      '@kitql/helper': 0.3.4
     transitivePeerDependencies:
       - '@types/node'
       - bufferutil
@@ -1301,24 +1301,24 @@ packages:
       - supports-color
     dev: false
 
-  /@kitql/helper/0.3.1:
-    resolution: {integrity: sha512-dpSnl3O6yHwtmRjCMIQ2RxnUNpjY1xmN0hUcFdZ8eIqR2/KX0D/7kobObSqOodKvU8oIcLrIGInHLQHHtCLTYQ==}
+  /@kitql/helper/0.3.4:
+    resolution: {integrity: sha512-XsQdvRKHHThGosYbkDYxX9k1UUHgfqBWpkPwK501/HyLlV0jI+gdUjH7D5Dzj3yn3Mcuf6p2ioNMnbZCX2iq6w==}
     dev: false
 
-  /@kitql/module-codegen/0.3.1_graphql@16.5.0:
-    resolution: {integrity: sha512-u4znrYnIk2Zdk5Q1lMP00O1EjS8jMkVAA8N2Jv2pvfa5sf+a1xN/bcgl4c3aE9z91SKZmzd0S7ThHN75Rro4iA==}
+  /@kitql/module-codegen/0.3.4_graphql@16.5.0:
+    resolution: {integrity: sha512-Wfwjnb1y1aoJbUAEimqhiQ3vBICyoWu/eC6O72p8B5I9FMBXXeGpv2BaNCgL1+xVIHdq8aeN4o3BEv2tcosa5Q==}
     peerDependencies:
       graphql: ^15.0.0 || ^16.0.0
     dependencies:
-      '@kitql/helper': 0.3.1
+      '@kitql/helper': 0.3.4
       graphql: 16.5.0
       yaml: 2.1.0
     dev: false
 
-  /@kitql/vite-plugin-watch-and-run/0.3.1:
-    resolution: {integrity: sha512-KwVSjUtwFk4Kn0QPXo26zMgd7fjoHxBM1mg5gq44YjisD/mvih/gFXfiR5gmpO/UcPRx6XdsDPnZEILfF/LoZw==}
+  /@kitql/vite-plugin-watch-and-run/0.3.4:
+    resolution: {integrity: sha512-Wlgif3S376PW2+bwzvDg80dZSdN8czG55dh8O5eBrkQS7ZFPogNqaUKaKYpk238in0/cREEoLKchcm/2KbcDwA==}
     dependencies:
-      '@kitql/helper': 0.3.1
+      '@kitql/helper': 0.3.4
       micromatch: 4.0.5
     dev: false
 
@@ -2395,12 +2395,12 @@ packages:
       ms: 2.1.2
 
   /decamelize/1.2.0:
-    resolution: {integrity: sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=}
+    resolution: {integrity: sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA==}
     engines: {node: '>=0.10.0'}
     dev: false
 
   /decompress-response/3.3.0:
-    resolution: {integrity: sha1-gKTdMjdIOEv6JICDYirt7Jgq3/M=}
+    resolution: {integrity: sha512-BzRPQuY1ip+qDonAOz42gRm/pg9F768C+npV/4JOsxRC2sq+Rlk+Q4ZCAsOhnIaMrgarILY+RMUIvMmmX1qAEA==}
     engines: {node: '>=4'}
     dependencies:
       mimic-response: 1.0.1
@@ -2420,7 +2420,7 @@ packages:
     dev: true
 
   /defaults/1.0.3:
-    resolution: {integrity: sha1-xlYFHpgX2f8I7YgUd/P+QBnz730=}
+    resolution: {integrity: sha512-s82itHOnYrN0Ib8r+z7laQz3sdE+4FP3d9Q7VLO7U+KRT+CR0GsWuyHxzdAY82I7cXv0G/twrqomTJLOssO5HA==}
     dependencies:
       clone: 1.0.4
     dev: false
@@ -2442,7 +2442,7 @@ packages:
     dev: true
 
   /delayed-stream/1.0.0:
-    resolution: {integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=}
+    resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
     engines: {node: '>=0.4.0'}
     dev: false
 
@@ -2524,7 +2524,7 @@ packages:
     dev: false
 
   /duplexer3/0.1.4:
-    resolution: {integrity: sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=}
+    resolution: {integrity: sha512-CEj8FwwNA4cVH2uFCoHUrmojhYh1vmCdOaneKJXwkeY1i9jnlslVo9dx+hQ5Hl9GnH/Bwy/IjxAyOePyPKYnzA==}
     dev: false
 
   /ecdsa-sig-formatter/1.0.11:
@@ -2537,7 +2537,7 @@ packages:
     resolution: {integrity: sha512-IOyp2Seq3w4QLln+yZWcMF3VXhhduz4bwg9gfI+CnP5TkzwNXQ8FCZuwwPsnes73AfWdf5J2n2OXdUwDUspDPQ==}
 
   /elegant-spinner/1.0.1:
-    resolution: {integrity: sha1-2wQ1IcldfjA/2PNFvtwzSc+wcp4=}
+    resolution: {integrity: sha512-B+ZM+RXvRqQaAmkMlO/oSe5nMUOaUnyfGYCEHoR8wrXsZR2mA0XVibsxV1bvTwxdRWah1PkQqso2EzhILGHtEQ==}
     engines: {node: '>=0.10.0'}
     dev: false
 
@@ -2773,7 +2773,7 @@ packages:
     engines: {node: '>=6'}
 
   /escape-string-regexp/1.0.5:
-    resolution: {integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=}
+    resolution: {integrity: sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==}
     engines: {node: '>=0.8.0'}
     dev: false
 
@@ -3007,7 +3007,7 @@ packages:
     dev: false
 
   /figures/1.7.0:
-    resolution: {integrity: sha1-y+Hjr/zxzUS4DK3+0o3Hk6lwHS4=}
+    resolution: {integrity: sha512-UxKlfCRuCBxSXU4C6t9scbDyWZ4VlaFFdojKtzJuSkuOBQ5CNFum+zZXFwHjo+CxBC1t6zlYPgHIgFjL8ggoEQ==}
     engines: {node: '>=0.10.0'}
     dependencies:
       escape-string-regexp: 1.0.5
@@ -3015,7 +3015,7 @@ packages:
     dev: false
 
   /figures/2.0.0:
-    resolution: {integrity: sha1-OrGi0qYsi/tDGgyUy3l6L84nyWI=}
+    resolution: {integrity: sha512-Oa2M9atig69ZkfwiApY8F2Yy+tzMbazyvqv21R0NsSC8floSOC09BbT1ITWAdoMGQvJ/aZnR1KMwdx9tvHnTNA==}
     engines: {node: '>=4'}
     dependencies:
       escape-string-regexp: 1.0.5
