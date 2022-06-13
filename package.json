@@ -38,6 +38,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@kitql/all-in": "0.6.7"
+    "@kitql/all-in": "0.6.8"
   }
 }
