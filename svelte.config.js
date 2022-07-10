@@ -1,4 +1,3 @@
-import watchAndRun from '@kitql/vite-plugin-watch-and-run'
 import adapter from '@sveltejs/adapter-vercel'
 import preprocess from 'svelte-preprocess'
 
@@ -14,16 +13,6 @@ const config = {
 
   kit: {
     adapter: adapter(),
-    vite: {
-      plugins: [
-        watchAndRun([
-          {
-            watch: '**/*.(gql|graphql)',
-            run: 'pnpm run gen',
-          },
-        ]),
-      ],
-    },
   },
 }
 

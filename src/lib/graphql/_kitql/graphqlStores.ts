@@ -106,7 +106,7 @@ function KQL_AllPagesStore() {
 			params?: RequestQueryParameters<Types.AllPagesQueryVariables>
 		): Promise<void> => {
 			if (clientStarted) {
-				queryLocal(params); // No await in purpose, we are in a client navigation.
+				queryLocal(params); // No await on purpose, we are in a client navigation.
 			} else {
 				await queryLocal(params);
 			}
@@ -227,7 +227,7 @@ function KQL_AllPostsStore() {
 			params?: RequestQueryParameters<Types.AllPostsQueryVariables>
 		): Promise<void> => {
 			if (clientStarted) {
-				queryLocal(params); // No await in purpose, we are in a client navigation.
+				queryLocal(params); // No await on purpose, we are in a client navigation.
 			} else {
 				await queryLocal(params);
 			}
@@ -348,7 +348,7 @@ function KQL_GetPageStore() {
 			params?: RequestQueryParameters<Types.GetPageQueryVariables>
 		): Promise<void> => {
 			if (clientStarted) {
-				queryLocal(params); // No await in purpose, we are in a client navigation.
+				queryLocal(params); // No await on purpose, we are in a client navigation.
 			} else {
 				await queryLocal(params);
 			}
@@ -469,7 +469,7 @@ function KQL_GetPostStore() {
 			params?: RequestQueryParameters<Types.GetPostQueryVariables>
 		): Promise<void> => {
 			if (clientStarted) {
-				queryLocal(params); // No await in purpose, we are in a client navigation.
+				queryLocal(params); // No await on purpose, we are in a client navigation.
 			} else {
 				await queryLocal(params);
 			}
